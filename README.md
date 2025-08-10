@@ -1,13 +1,13 @@
 # 视觉语言模型引导的多模态图像融合
 复现的代码和数据集来源于论文 ***Image Fusion via Vision-Language Model (ICML 2024).***
 
-## 链接
+## 🏊链接
 - [*[模型权重]*](https://pan.baidu.com/s/1CT7I4YrhhgCUnuInaau05w?pwd=q45e)  
 - [*[数据集（使用前200对）]*](https://pan.baidu.com/s/1acy8qxiDxSXChMisoh8sgQ?pwd=r3rs)  
 
-## 🌐 Usage
-### 🏊 训练
-**1. Virtual Environment**
+## 🌐Usage
+### 训练
+**1. 虚拟环境配置**
 ```
 conda create -n FILM python=3.8
 conda activate FILM
@@ -18,11 +18,11 @@ python3.8 -m jittor.test.test_example
 pip install -r requirements.txt
 ```
 
-**2. Data Preparation**
+**2. 数据准备**
 
 Download the datasets corresponding to four different tasks provided in our paper from [this link](https://drive.google.com/drive/folders/1JPNbh-iFhkbr35FDUOYEN4WE4LnxY954?usp=sharing). These datasets contain images, texts, and implicit features corresponding to the texts. Place these datasets in the  ``'./VLFDataset/'`` folder.
 
-**3. Pre-Processing**
+**3. 数据预处理**
 
 Run 
 ```
