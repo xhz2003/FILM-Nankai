@@ -2,9 +2,8 @@
 复现的代码和数据集来源于论文 ***Image Fusion via Vision-Language Model (ICML 2024).***
 
 ## 链接
-- [*[Paper]*](https://openreview.net/pdf?id=eqY64Z1rsT)  
-- [*[ArXiv]*](https://arxiv.org/abs/2402.02235)  
-- [*[Dataset]*](https://drive.google.com/drive/folders/1JPNbh-iFhkbr35FDUOYEN4WE4LnxY954?usp=sharing)  
+- [*[模型权重]*](https://pan.baidu.com/s/1CT7I4YrhhgCUnuInaau05w?pwd=q45e)  
+- [*[数据集（使用前200对）]*](https://pan.baidu.com/s/1acy8qxiDxSXChMisoh8sgQ?pwd=r3rs)  
 
 ## 🌐 Usage
 ### 🏊 训练
