@@ -1,54 +1,21 @@
-# FILM: image Fusion via vIsion-Language Model
-Code and dataset for ***Image Fusion via Vision-Language Model (ICML 2024).***
+# 视觉语言模型引导的多模态图像融合
+复现的代码和数据集来源于论文 ***Image Fusion via Vision-Language Model (ICML 2024).***
 
-## Information
-
-[Zixiang Zhao](https://zhaozixiang1228.github.io/), [Lilun Deng](https://openreview.net/profile?id=~Lilun_Deng1), [Haowen Bai](https://scholar.google.com.au/citations?user=gMSDelwAAAAJ&hl=en), [Yukun Cui](https://openreview.net/profile?id=~Yukun_Cui2), [Zhipeng Zhang](https://openreview.net/profile?id=~Zhipeng_Zhang5), [Yulun Zhang](https://yulunzhang.com/), [Haotong Qin](https://htqin.github.io/), [Dongdong Chen](http://dongdongchen.com/), [Jiangshe Zhang](http://gr.xjtu.edu.cn/web/jszhang), [Peng Wang](https://scholar.google.com.au/citations?user=aPLp7pAAAAAJ&hl=en), [Luc Van Gool](https://vision.ee.ethz.ch/people-details.OTAyMzM=.TGlzdC8zMjQ4LC0xOTcxNDY1MTc4.html).
-
-- [*[Project Page🔥]*](https://zhaozixiang1228.github.io/Project/IF-FILM/)  
+## 链接
 - [*[Paper]*](https://openreview.net/pdf?id=eqY64Z1rsT)  
 - [*[ArXiv]*](https://arxiv.org/abs/2402.02235)  
 - [*[Dataset]*](https://drive.google.com/drive/folders/1JPNbh-iFhkbr35FDUOYEN4WE4LnxY954?usp=sharing)  
 
-
-## Update
-- [2024/07] Vision-Language Fusion (VLF) Dataset are public available.
-- [2024/07] Codes and config files of FILM are public available.
-- [2024/06] Release Project Page for FILM.
-
-
-## Citation
-
-```
-@inproceedings{Zhao_2024_ICML,
-    title={Image Fusion via Vision-Language Model},
-    author={Zixiang Zhao and Lilun Deng and Haowen Bai and Yukun Cui and Zhipeng Zhang 
-            and Yulun Zhang and Haotong Qin and Dongdong Chen and Jiangshe Zhang 
-            and Peng Wang and Luc Van Gool},
-    booktitle={Proceedings of the International Conference on Machine Learning (ICML)},
-    year={2024},
-}
-```
-
-## Abstract
-
-Image fusion integrates essential information from multiple images into a single composite, enhancing structures, textures, and refining imperfections. Existing methods predominantly focus on pixel-level and semantic visual features for recognition, but often overlook the deeper text-level semantic information beyond vision. Therefore, we introduce a novel fusion paradigm named image **F**usion via v**I**sion-**L**anguage **M**odel (**FILM**), for the first time, utilizing explicit textual information from source images to guide the fusion process. Specifically, FILM generates semantic prompts from images and inputs them into ChatGPT for comprehensive textual descriptions. These descriptions are fused within the textual domain and guide the visual information fusion, enhancing feature extraction and contextual understanding, directed by textual semantic information via cross-attention. FILM has shown promising results in four image fusion tasks: infrared-visible, medical, multi-exposure, and multi-focus image fusion. We also propose a vision-language dataset containing ChatGPT-generated paragraph descriptions for the eight image fusion datasets across four fusion tasks, facilitating future research in vision-language model-based image fusion.
-
-
 ## 🌐 Usage
-
-### ⚙ Network Architecture
-
-Our FILM is implemented in ``net/Film.py``.
-
-### 🏊 Training
+### 🏊 训练
 **1. Virtual Environment**
 ```
-# create virtual environment
-conda create -n FILM python=3.8.17
+conda create -n FILM python=3.8
 conda activate FILM
-# select pytorch version yourself
-# install FILM requirements
+#注意jittor库安装
+sudo apt install python3.8-dev libomp-dev
+python3.8 -m pip install jittor
+python3.8 -m jittor.test.test_example
 pip install -r requirements.txt
 ```
 
