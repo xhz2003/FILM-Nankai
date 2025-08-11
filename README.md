@@ -1,4 +1,4 @@
-# 视觉语言模型引导的多模态图像融合
+# 视觉语言大模型引导的多模态图像融合
 复现的代码和数据集来源于论文 ***Image Fusion via Vision-Language Model (ICML 2024).***
 
 ## 🏊链接
@@ -18,17 +18,13 @@ python3.8 -m jittor.test.test_example
 pip install -r requirements.txt
 ```
 
-**2. 数据准备**
-
-Download the datasets corresponding to four different tasks provided in our paper from [this link](https://drive.google.com/drive/folders/1JPNbh-iFhkbr35FDUOYEN4WE4LnxY954?usp=sharing). These datasets contain images, texts, and implicit features corresponding to the texts. Place these datasets in the  ``'./VLFDataset/'`` folder.
-
-**3. 数据预处理**
-
+**2. 数据准备与预处理**
+下载好上述链接中的数据集后，按照下载的层级关系放在VLFDataset文件夹中，然后运行下面的命令
 Run 
 ```
 python data_process.py
 ``` 
-and the processed training dataset is in ``'./VLFDataset_h5/MSRS_train.h5'``.
+您将得到训练的H5文件存放在目录 ``'./VLFDataset_h5/MSRS_train.h5'``.
 
 **4. FILM Training**
 
