@@ -25,24 +25,29 @@ Run
 ```
 python data_process.py
 ``` 
-您将得到训练的H5文件存放在目录 ``'./VLFDataset_h5/MSRS_train.h5'``.
-
-其中，每个H5文件都包含三个字段imageA、imageB、text
+您将得到训练的H5文件存放在目录 ``'./VLFDataset_h5/MSRS_train.h5'``。其中，每个H5文件都包含三个字段imageA、imageB、text
 ```
 text.shape：(1, 149, 768)
 imageA.shape：(1, 288, 384)
 imageB.shape：(1, 288, 384)
 ``` 
 
-**4. FILM Training**
+**4. FILM 训练**
 
 Run 
 ```
 python train.py
 ``` 
-
-The training results will be stored in the ``'./exp/'`` folder, with subfolder names that can be modified using the ``save_path`` variable in  ``'train.py'``. The next-level subfolders are named after the training start time and contain three folders: ``'code'``, ``'model'``, and ``'pic_fusion'``, as well as a log file and a JSON file recording the parameters. The ``'code'`` folder saves the model and training files for that session, the ``'model'`` folder saves the model weights for each epoch during training, and the ``'pic_fusion'`` folder saves the original images and fusion results of the first two batches from each training epoch.
-
+训练结果将存储在 './exp/' 文件夹中。下一级子文件夹内部包含三个文件夹（'code'、'model' 和 'pic_fusion'），以及一个日志文件和一个记录参数的 JSON 文件。其中：
+'code' 文件夹用于保存该次训练对应的模型文件和训练文件；
+'model' 文件夹用于保存训练过程中每个 epoch 的模型权重；
+'pic_fusion' 文件夹用于保存每个训练 epoch 中前两个批次的原始图像及融合结果。
+在模型保存方面，jittor和pytorch有所区别，因此进行改动
+'''
+jt.save(checkpoint, os.path.join(model_dir, f'ckpt_{epoch+1}.pkl')) #保存
+model.load(jt.load(ckpt_path)["model"]) #加载
+'''
+即保存的是一个字典，键是参数名，值是 Jittor 的 jt.Var对象。
 ### 🏄 Testing
 
 **1. Pretrained models**
