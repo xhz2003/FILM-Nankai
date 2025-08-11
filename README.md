@@ -73,15 +73,13 @@ size = 'small'
 一共是361对图片-文本数据集，722张
 
 <img src="images\测试数据集处理.png" width="70%" align=center />
+
 **3. 实验结果对比**
 
-If you want to infer with our FILM and obtain the fusion results in our paper, please run 
+ （1）使用FILM 模型进行推理并得到融合结果，请运行以下命令进行图像融合：
 ```
 python test.py
-``` 
-to perform image fusion. The output fusion results will be saved in the ``'./test_output/{Dataset_name}/Gray'``  folder. If you want to test using your own trained model, you can set the path of the model you want to load as ``'ckpt_path'`` before the model weights are loaded in ``'test.py'``.
-
-The output for IVF is:
+```
 
 ```
 ================================================================================
