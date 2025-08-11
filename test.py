@@ -42,7 +42,8 @@ save_path = os.path.join("test_output", dataset_name, "Gray")
 os.makedirs(save_path, exist_ok=True)
 
 # 加载权重（Jittor 的方式）
-model.load(jt.load(ckpt_path)["model"])
+ckpt = jt.load(ckpt_path)
+model.load_parameters(ckpt["model"])
 
 # -------------------------
 # 推理
