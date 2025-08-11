@@ -3,7 +3,7 @@
 
 ## 🏊链接
 - [*[模型权重]*](https://pan.baidu.com/s/1CT7I4YrhhgCUnuInaau05w?pwd=q45e)  
-- [*[数据集（使用前200对）]*](https://pan.baidu.com/s/1acy8qxiDxSXChMisoh8sgQ?pwd=r3rs)  
+- [*[数据集（使用前1500对）]*](https://pan.baidu.com/s/1acy8qxiDxSXChMisoh8sgQ?pwd=r3rs)  
 
 ## 🌐Usage
 ### 训练
@@ -60,7 +60,7 @@ model.load(jt.load(ckpt_path)["model"]) #加载
 
 **2. 测试数据集**
 
-通过上面提供的数据集下载链接- [*[数据集（使用前200对）]*](https://pan.baidu.com/s/1acy8qxiDxSXChMisoh8sgQ?pwd=r3rs)是包括测试集的，需要在data_process.py文件中修改：
+通过上面提供的数据集下载链接- [*[数据集（使用前1500对）]*](https://pan.baidu.com/s/1acy8qxiDxSXChMisoh8sgQ?pwd=r3rs)是包括测试集的，需要在data_process.py文件中修改：
 ```
 img_text_path = 'VLFDataset'
 h5_path = "VLFDataset_h5"
@@ -86,6 +86,12 @@ python test.py
 <img src="images\融合结果.jpg" width="70%" align=center />
 
 （2）融合结果对比
+
+使用jittor框架在小数据集（150对）上面训练了100个epoch，训练日志[*[链接]*](./log)，训练的损失函数曲线如下：
+
+<img src="images\loss_comparison.png" width="70%" align=center />
+
+分析
 ```
 ================================================================================
 The test result of MSRS:
