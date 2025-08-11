@@ -80,7 +80,12 @@ size = 'small'
 ```
 python test.py
 ```
+输出的融合结果将保存在 './test_output/{Dataset_name}/Gray' 文件夹中。同时可以在 'test.py' 中加载模型权重之前，将您要加载的模型路径设置为 'ckpt_path'。
+融合结果如下所示（这里有疑惑的是同样的数据集和配置，jittor在推理时速度要慢很多，可能是没有设置GPU或者未加载成功所导致的）：
 
+<img src="images\融合结果.jpg" width="70%" align=center />
+
+（2）融合结果对比
 ```
 ================================================================================
 The test result of MSRS:
