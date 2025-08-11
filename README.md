@@ -60,7 +60,7 @@ model.load(jt.load(ckpt_path)["model"]) #加载
 
 **2. 测试数据集**
 
-通过上面提供的数据集下载链接- [*[数据集（使用前1500对）]*](https://pan.baidu.com/s/1acy8qxiDxSXChMisoh8sgQ?pwd=r3rs)是包括测试集的，需要在data_process.py文件中修改：
+通过上面提供的数据集下载链接- [*[数据集（使用前150对）]*](https://pan.baidu.com/s/1acy8qxiDxSXChMisoh8sgQ?pwd=r3rs)是包括测试集的，需要在data_process.py文件中修改：
 ```
 img_text_path = 'VLFDataset'
 h5_path = "VLFDataset_h5"
