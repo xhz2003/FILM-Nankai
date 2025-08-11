@@ -39,22 +39,25 @@ Run
 python train.py
 ``` 
 训练结果将存储在 './exp/' 文件夹中。下一级子文件夹内部包含三个文件夹（'code'、'model' 和 'pic_fusion'），以及一个日志文件和一个记录参数的 JSON 文件。其中：
+
 'code' 文件夹用于保存该次训练对应的模型文件和训练文件；
+
 'model' 文件夹用于保存训练过程中每个 epoch 的模型权重；
+
 'pic_fusion' 文件夹用于保存每个训练 epoch 中前两个批次的原始图像及融合结果。
+
 在模型保存方面，jittor和pytorch有所区别，因此进行改动
-'''
+```
 jt.save(checkpoint, os.path.join(model_dir, f'ckpt_{epoch+1}.pkl')) #保存
 model.load(jt.load(ckpt_path)["model"]) #加载
-'''
+``` 
 即保存的是一个字典，键是参数名，值是 Jittor 的 jt.Var对象。
-### 🏄 Testing
+### 测试
 
-**1. Pretrained models**
+**1. 预训练模型**
+预训练模型可在- [*[链接]*](https://pan.baidu.com/s/1CT7I4YrhhgCUnuInaau05w?pwd=q45e)中找到。用于处理红外-可见光融合（IVF）任务，其他的多曝光图像融合、多聚焦图像融合、和医学图像融合等任务也是一样的测试代码。
 
-The pre-trained models can be found at ``'./models/IVF.pth'``, ``'./models/MEF.pth'``, ``'./models/MFF.pth'``, and ``'./models/MIF.pth'``. These models are responsible for infrared-visible fusion (IVF), multi-exposure image fusion (MEF), multi-focus image fusion (MFF), and medical image fusion (MIF) tasks, respectively.
-
-**2. Test datasets**
+**2. 测试数据集**
 
 The test datasets used in the paper are provided in the format ``'./VLFDataset/{Task_name}/{Dataset_name}/test.txt'``. Here, the provided ``'Task_name'`` includes IVF, MEF, MFF, and MIF, and ``'Dataset_name'`` corresponds to the dataset names included for each task.
 
