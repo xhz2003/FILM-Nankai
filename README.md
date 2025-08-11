@@ -60,7 +60,7 @@ model.load(jt.load(ckpt_path)["model"]) #加载
 
 **2. 测试数据集**
 
-通过上面提供的数据集下载链接- [*[数据集（使用前200对）]*](https://pan.baidu.com/s/1acy8qxiDxSXChMisoh8sgQ?pwd=r3rs)是包括测试集的，在data_process.py文件中，修改如下：
+通过上面提供的数据集下载链接- [*[数据集（使用前200对）]*](https://pan.baidu.com/s/1acy8qxiDxSXChMisoh8sgQ?pwd=r3rs)是包括测试集的，需要在data_process.py文件中修改：
 ```
 img_text_path = 'VLFDataset'
 h5_path = "VLFDataset_h5"
@@ -69,9 +69,11 @@ task_name = 'IVF'
 dataset_name = 'MSRS'
 dataset_mode = 'test'
 size = 'small'
-``` 
+```
+一共是361对图片-文本数据集，722张
 
-**3. Results in Our Paper**
+<img src="images\测试数据集处理.png" width="70%" align=center />
+**3. 实验结果对比**
 
 If you want to infer with our FILM and obtain the fusion results in our paper, please run 
 ```
