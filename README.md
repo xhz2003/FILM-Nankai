@@ -55,13 +55,21 @@ model.load(jt.load(ckpt_path)["model"]) #加载
 ### 测试
 
 **1. 预训练模型**
+
 预训练模型可在- [*[链接]*](https://pan.baidu.com/s/1CT7I4YrhhgCUnuInaau05w?pwd=q45e)中找到。用于处理红外-可见光融合（IVF）任务，其他的多曝光图像融合、多聚焦图像融合、和医学图像融合等任务也是一样的测试代码。
 
 **2. 测试数据集**
 
-The test datasets used in the paper are provided in the format ``'./VLFDataset/{Task_name}/{Dataset_name}/test.txt'``. Here, the provided ``'Task_name'`` includes IVF, MEF, MFF, and MIF, and ``'Dataset_name'`` corresponds to the dataset names included for each task.
-
-Unfortunately, due to the size of the datasets provided in the paper exceeding 4GB, we are unable to upload them for exhibition. You can download them via [this link](https://drive.google.com/drive/folders/1JPNbh-iFhkbr35FDUOYEN4WE4LnxY954?usp=sharing). This includes images, text, and the implicit features corresponding to the text (via BLIP2) for all datasets.
+通过上面提供的数据集下载链接- [*[数据集（使用前200对）]*](https://pan.baidu.com/s/1acy8qxiDxSXChMisoh8sgQ?pwd=r3rs)是包括测试集的，在data_process.py文件中，修改如下：
+```
+img_text_path = 'VLFDataset'
+h5_path = "VLFDataset_h5"
+os.makedirs(h5_path, exist_ok=True)
+task_name = 'IVF'
+dataset_name = 'MSRS'
+dataset_mode = 'test'
+size = 'small'
+``` 
 
 **3. Results in Our Paper**
 
