@@ -92,6 +92,9 @@ python test.py
 <img src="images\loss_comparison.png" width="70%" align=center />
 
 分析
+
+**数值精度与计算细节。** Jittor 和 PyTorch 在底层计算和数值稳定性上可能有不同的实现，尤其在反向传播和浮点运算精度上会有差异，可能导致训练时梯度波动更明显。
+**反向传播的计算路径。** PyTorch 采用静态图与动态图结合的混合计算模式，而 Jittor 是纯动态图架构。
 ```
 ================================================================================
 The test result of MSRS:
