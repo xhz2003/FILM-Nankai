@@ -27,6 +27,13 @@ python data_process.py
 ``` 
 您将得到训练的H5文件存放在目录 ``'./VLFDataset_h5/MSRS_train.h5'``.
 
+其中，每个H5文件都包含三个字段imageA、imageB、text
+```
+text.shape：(1, 149, 768)
+imageA.shape：(1, 288, 384)
+imageB.shape：(1, 288, 384)
+``` 
+
 **4. FILM Training**
 
 Run 
